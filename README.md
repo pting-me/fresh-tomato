@@ -1,4 +1,10 @@
-# fresh project
+# Fresh Tomato
+
+Pomodoro app written in Deno Fresh
+
+## TODO
+
+- Figure out Twind Intellisense
 
 ### Usage
 
