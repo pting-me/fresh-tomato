@@ -8,7 +8,7 @@ export default function Home() {
       <Head>
         <title>Fresh Tomato</title>
       </Head>
-      <div class="bg-gray-800 min-h-screen text-white">
+      <div class="min-h-screen">
         <div class="p-4 mx-auto max-w-screen-md">
           <img
             src="/logo.svg"

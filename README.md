@@ -2,11 +2,7 @@
 
 Pomodoro app written in Deno Fresh
 
-## TODO
-
-- Figure out Twind Intellisense
-
-### Usage
+## Usage
 
 Start the project:
 

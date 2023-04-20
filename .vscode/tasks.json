@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "deno",
+      "command": "task",
+      "args": ["start"],
+      "problemMatcher": [
+        "$deno"
+      ],
+      "label": "deno task: start",
+      "detail": "deno run -A --watch=static/,routes/ dev.ts",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
