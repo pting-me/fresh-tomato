@@ -1,7 +1,6 @@
-import { useState } from "preact/hooks";
-
 import { TimerButton } from "../components/TimerButton.tsx";
-import { useInterval } from "../utils/useInterval.ts";
+import { timerStatusLabels } from "../utils/labels.ts";
+import { timerState } from "../utils/state.ts";
 
 function formatDigits(n: number) {
   return n > 10 ? String(n) : `0${n}`;
@@ -13,19 +12,37 @@ function formatTime(time: number) {
   return `${minutes}:${seconds}`;
 }
 
-export default function Timer() {
-  const [time, setTime] = useState(60 * 20);
-  const [isActive, setIsActive] = useState(false);
+export default function Timer(props: any) {
+  // const [time, setTime] = useState(60 * 20);
+  // const [isActive, setIsActive] = useState(false);
+  // const { state: { isActive, timeLeft } } = props;
 
-  useInterval(() => setTime(time - 1), isActive ? 1000 : null);
+  // useInterval(() => setTime(time - 1), isActive ? 1000 : null);
+
+  const { status, timeLeft } = timerState;
   return (
-    <TimerButton active={isActive} onClick={() => setIsActive(!isActive)}>
+    <TimerButton
+      active={status.value === "running"}
+      onClick={() => {
+        switch (status.value) {
+          case "idle":
+          case "paused":
+            status.value = "running";
+            break;
+          case "running":
+            status.value = "paused";
+            break;
+          case "complete":
+          default:
+        }
+      }}
+    >
       <div class="flex flex-col items-center justify-center gap-6">
         <div class="mt-10">
-          <p class="font-bold text-5xl">{formatTime(time)}</p>
+          <p class="font-bold text-5xl">{formatTime(timeLeft.value)}</p>
         </div>
         <div class="uppercase">
-          {isActive ? "pause" : "start"}
+          {timerStatusLabels[status.value]}
         </div>
       </div>
     </TimerButton>

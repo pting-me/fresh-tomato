@@ -1,13 +1,15 @@
 import TabBar from "../components/TabBar.tsx";
-import { createOptionData, timerOptionLabels } from "../utils/labels.ts";
-import { timerOption, TimerOption, timerOptions } from "../utils/state.ts";
+import { createOptionData, timerTypeLabels } from "../utils/labels.ts";
+import { timerState, timerTypes } from "../utils/state.ts";
 
 export default function TimerSelect() {
+  const { type, timeLeft } = timerState;
+  console.log(type.value);
   return (
     <TabBar
-      tabs={createOptionData(timerOptions, timerOptionLabels)}
-      value={timerOption.value}
-      onChange={(v) => timerOption.value = v as TimerOption}
+      tabs={createOptionData(timerTypes, timerTypeLabels)}
+      value={type.value}
+      // onChange={(v) => type.value = v as TimerType}
     />
   );
 }
