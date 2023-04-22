@@ -1,5 +1,8 @@
 import { JSX } from "preact";
 
+import { colorClass } from "../utils/colors.ts";
+import { accentColorClass } from "../utils/themeState.ts";
+
 function classNames(...classes: (string | false)[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -31,11 +34,11 @@ export default function TabBar(props: TabBarProps) {
               key={t.value}
               value={t.value}
               onClick={handleClick}
+              disabled
               className={classNames(
-                t.value === value
-                  ? "bg-indigo-100 text-indigo-700"
-                  : "text-gray-500 hover:text-gray-700",
-                "rounded-md px-3 py-2 text-sm font-medium",
+                t.value === value &&
+                  `bg-${accentColorClass} text-${colorClass.onAccent}`,
+                "rounded-full px-4 py-3 text-sm font-medium cursor-unset",
               )}
             >
               {t.label}

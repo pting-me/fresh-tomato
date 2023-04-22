@@ -1,0 +1,22 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+
+/* Font theming */
+
+body[data-font-type="sans"] {
+  --font-family: 'Kumbh Sans';
+}
+
+body[data-font-type="serif"] {
+  --font-family: 'Roboto Slab';
+}
+
+body[data-font-type="mono"] {
+  --font-family: 'Space Mono';
+}
+
+/* Definitions */
+
+body {
+  font-family: var(--font-family);
+}

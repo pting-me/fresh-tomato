@@ -9,7 +9,6 @@
         "$deno"
       ],
       "label": "deno task: start",
-      "detail": "deno run -A --watch=static/,routes/ dev.ts",
       "group": {
         "kind": "build",
         "isDefault": true

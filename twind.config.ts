@@ -1,5 +1,19 @@
 import { Options } from "$fresh/plugins/twind.ts";
 
-export default {
+import { colors } from "./utils/colors.ts";
+
+const options: Options = {
   selfURL: import.meta.url,
-} as Options;
+  theme: {
+    fontFamily: {
+      sans: ["Kumbh Sans"],
+      serif: ["Roboto Slab"],
+      mono: ["Space Mono"],
+    },
+    extend: {
+      colors,
+    },
+  },
+};
+
+export default options;
