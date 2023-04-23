@@ -10,11 +10,8 @@ deno task start
 
 ## Todo
 
-- Time editing
 - Testing
 - Visual indicator for time
-- Applying settings as submit form
-  - Right now any changes to settings automatically update the state
 - Clicking on different buttons should update timer type (e.g. pomodoro to short
   break)
 - Fix errors for custom twind types
