@@ -10,7 +10,7 @@ export default function App({ Component }: AppProps) {
         <title>Fresh Tomato</title>
         <link rel="stylesheet" href={asset("style.css")} />
       </Head>
-      <body class={`bg-${colorClass.surface} text-${colorClass.neutral}`}>
+      <body class={`bg-${colorClass.surface} text-${colorClass.onSurface}`}>
         <Component />
       </body>
     </html>

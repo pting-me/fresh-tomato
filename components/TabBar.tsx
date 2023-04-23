@@ -37,7 +37,7 @@ export default function TabBar(props: TabBarProps) {
               className={classNames(
                 t.value === value &&
                   `bg-accent text-on-accent`,
-                "rounded-full px-4 py-3 text-sm font-medium cursor-unset",
+                "rounded-full px-6 py-3 text-sm font-bold cursor-unset",
               )}
             >
               {t.label}

@@ -2,8 +2,8 @@ import { TimerStatus, TimerType } from "./timerState.ts";
 
 export const timerTypeLabels: Record<TimerType, string> = {
   "pomodoro": "pomodoro",
-  "short-break": "short break",
-  "long-break": "long break",
+  "shortBreak": "short break",
+  "longBreak": "long break",
 };
 
 export const timerStatusToActionLabels: Record<TimerStatus, string> = {

@@ -7,12 +7,16 @@ export const accentColors = {
 } as const;
 
 export const neutralColors = {
-  neutral: "#D7E0FF",
+  // accent is calculated in twind.config
+  onAccent: "#161932",
   surface: "#1E213F",
-  onAccent: "#1E213F",
-  container: "#FFFFFF",
-  containerDim: "#EFF1FA",
   surfaceDim: "#161932",
+  onSurface: "#D7E0FF",
+  onSurfaceVariant: "#FFFFFF",
+  inverseSurface: "#EFF1FA",
+  inverseSurfaceBright: "#FFFFFF",
+  inverseOnSurface: "#161932",
+  inverseOnSurfaceVariant: "#16193266",
 } as const;
 
 export const colors = { ...accentColors, ...neutralColors };

@@ -2,20 +2,20 @@ import { computed, effect, signal } from "@preact/signals";
 
 import { timerStatusToActionLabels } from "./labels.ts";
 
-export const timerTypes = ["pomodoro", "short-break", "long-break"] as const;
+export const timerTypes = ["pomodoro", "shortBreak", "longBreak"] as const;
 export type TimerType = (typeof timerTypes)[number];
 export const timerStatuses = ["idle", "running", "paused", "complete"] as const;
 export type TimerStatus = (typeof timerStatuses)[number];
 
 export const defaultOptionQueue: TimerType[] = [
   "pomodoro",
-  "short-break",
+  "shortBreak",
   "pomodoro",
-  "short-break",
+  "shortBreak",
   "pomodoro",
-  "short-break",
+  "shortBreak",
   "pomodoro",
-  "long-break",
+  "longBreak",
 ];
 
 const SECONDS_PER_MINUTE = 60;
@@ -26,8 +26,8 @@ const currentTypeIndex = signal(0);
 const typeQueue = signal<TimerType[]>(defaultOptionQueue);
 const timerDurations = signal<Record<TimerType, number>>({
   pomodoro: 25,
-  "short-break": 5,
-  "long-break": 30,
+  "shortBreak": 5,
+  "longBreak": 30,
 });
 
 const callbackId = signal(NaN);
@@ -85,15 +85,23 @@ function updateInterval() {
   }
 }
 
+function updateStartTime() {
+  if (status.peek() !== "complete") {
+    currentTime.value = startTime.value;
+  }
+}
+
 effect(finish);
 effect(switchToNextTimer);
 effect(updateInterval);
+effect(updateStartTime);
 
 export const timerState = {
   actionLabel,
   currentTime,
   startTime,
   status,
+  timerDurations,
   toggle,
   type,
 };
