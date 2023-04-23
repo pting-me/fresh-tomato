@@ -39,8 +39,7 @@ deno task start
     of the default Deno Fresh install
 - VSCode intellisense does not import properly from `import_map.json`, and keeps
   grabbing from urls
-- `twind` feels like "we have Tailwind at home," and just feels really weird to
-  try to get working
+- Had trouble working with `twind` plugin
   - Still have unresolved issue with color types being implemented properly, and
     is really difficult to figure out with documentation
   - Half the time, docs feel like they don't apply to the current Deno Fresh use
