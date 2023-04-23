@@ -1,5 +1,6 @@
 import { Options } from "$fresh/plugins/twind.ts";
 
+import { camelToKebab } from "./utils/camelToKebab.ts";
 import { colors } from "./utils/colors.ts";
 
 const options: Options = {
@@ -11,7 +12,10 @@ const options: Options = {
       mono: ["Space Mono"],
     },
     extend: {
-      colors,
+      colors: {
+        accent: "var(--accent-color)",
+        ...camelToKebab(colors),
+      },
     },
   },
 };

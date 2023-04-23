@@ -1,16 +1,26 @@
 import { IS_BROWSER } from "https:/deno.land/x/fresh@1.1.5/runtime.ts";
 
-import { computed, effect, signal } from "@preact/signals";
+import { effect, signal } from "@preact/signals";
 
-import { AccentColor, colors } from "./colors.ts";
+import { AccentColor, accentColors } from "./colors.ts";
 
-const fontTypes = ["sans", "serif", "mono"] as const;
-type FontType = (typeof fontTypes)[number];
+export const fontTypes = ["sans", "serif", "mono"] as const;
+export type FontType = (typeof fontTypes)[number];
 
-const accentColor = signal<AccentColor>("red");
-const accentColorClass = computed(() => `[${colors[accentColor.value]}]`);
+export const themes = accentColors;
+export type Theme = keyof typeof themes;
 
-/* Font types are applied globally */
+// This doesn't necessarily have to match AccentColor
+const theme = signal<AccentColor>("red");
+effect(() => {
+  if (IS_BROWSER) {
+    const body = document?.querySelector("body");
+    if (body) {
+      body.setAttribute("data-theme", theme.value);
+    }
+  }
+});
+
 const fontType = signal<FontType>("sans");
 effect(() => {
   if (IS_BROWSER) {
@@ -21,4 +31,4 @@ effect(() => {
   }
 });
 
-export { accentColor, accentColorClass, fontType };
+export { fontType, theme };

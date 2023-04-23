@@ -1,22 +1,29 @@
 /* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
 
-/* Font theming */
-
+/* Fonts */
 body[data-font-type="sans"] {
-  --font-family: 'Kumbh Sans';
+  --font-family: "Kumbh Sans";
 }
-
 body[data-font-type="serif"] {
-  --font-family: 'Roboto Slab';
+  --font-family: "Roboto Slab";
+}
+body[data-font-type="mono"] {
+  --font-family: "Space Mono";
 }
 
-body[data-font-type="mono"] {
-  --font-family: 'Space Mono';
+/* Accent colors */
+body[data-theme="red"] {
+  --accent-color: #f87070;
+}
+body[data-theme="teal"] {
+  --accent-color: #70f3f8;
+}
+body[data-theme="purple"] {
+  --accent-color: #d881f8;
 }
 
 /* Definitions */
-
 body {
   font-family: var(--font-family);
 }

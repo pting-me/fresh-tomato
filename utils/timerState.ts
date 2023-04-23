@@ -19,18 +19,15 @@ export const defaultOptionQueue: TimerType[] = [
 ];
 
 const SECONDS_PER_MINUTE = 60;
-const ONE_SECOND = 2;
+const ONE_SECOND = 1000;
 
 const status = signal<TimerStatus>("idle");
 const currentTypeIndex = signal(0);
 const typeQueue = signal<TimerType[]>(defaultOptionQueue);
 const timerDurations = signal<Record<TimerType, number>>({
-  // pomodoro: 25,
-  // "short-break": 5,
-  // "long-break": 30,
-  pomodoro: 3,
-  "short-break": 1,
-  "long-break": 1,
+  pomodoro: 25,
+  "short-break": 5,
+  "long-break": 30,
 });
 
 const callbackId = signal(NaN);
