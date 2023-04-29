@@ -3,13 +3,17 @@
 
 /* Fonts */
 body[data-font-type="sans"] {
-  --font-family: "Kumbh Sans";
+  --font-family: "Kumbh Sans", --apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
 }
 body[data-font-type="serif"] {
-  --font-family: "Roboto Slab";
+  --font-family: "Roboto Slab", Palatino, "Palatino Linotype", "Palatino LT STD",
+    "Book Antiqua", Georgia, serif;
 }
 body[data-font-type="mono"] {
-  --font-family: "Space Mono";
+  --font-family: "Space Mono", "SF Mono", SFMono-Regular, Consolas,
+    "Liberation Mono", Menlo, Courier, monospace;
 }
 
 /* Accent colors */
@@ -22,8 +26,25 @@ body[data-theme="teal"] {
 body[data-theme="purple"] {
   --accent-color: #d881f8;
 }
+/* initialize with red to avoid pre-load jank */
+body {
+  --accent-color: #f87070;
+}
 
 /* Definitions */
 body {
-  font-family: var(--font-family);
+  font-family: var(
+    --font-family,
+    "Kumbh Sans",
+    --apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol"
+  );
 }
