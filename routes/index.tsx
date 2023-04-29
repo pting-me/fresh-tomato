@@ -1,5 +1,5 @@
 import { Header } from "../components/Header.tsx";
-import Settings from "../islands/Settings.tsx";
+import SettingsMultipleSignal from "../islands/SettingsMultipleSignal.tsx";
 import Timer from "../islands/Timer.tsx";
 import TimerSelect from "../islands/TimerSelect.tsx";
 
@@ -9,7 +9,9 @@ export default function Home() {
       <Header />
       <TimerSelect />
       <Timer />
-      <Settings />
+      <div class="flex gap-8">
+        <SettingsMultipleSignal />
+      </div>
     </div>
   );
 }

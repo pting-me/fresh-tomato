@@ -1,7 +1,8 @@
 import { clsx } from "clsx";
 import { Fragment } from "preact";
 import { useRef } from "preact/hooks";
-import { useForm } from "react-hook-form";
+
+import { signal, Signal } from "@preact/signals";
 
 import { Button } from "../components/Button.tsx";
 import { CheckIcon } from "../components/CheckIcon.tsx";
@@ -26,7 +27,33 @@ interface FieldValues {
   theme: string;
 }
 
-export default function Settings() {
+interface UseFormOptions<TFieldValues> {
+  defaultValues: Partial<TFieldValues>;
+}
+
+function useForm<TFieldValues>(
+  options: UseFormOptions<TFieldValues>,
+) {
+  const registry: Record<string, Signal<unknown>> = {};
+  const register = (fieldName: string) => {
+    registry[fieldName] = signal(null);
+  };
+
+  return {
+    register: (name: string) => ({}),
+    handleSubmit: (onValid: (fv: TFieldValues) => void) => undefined,
+    watch: (name: string) => "",
+  };
+}
+
+/**
+ * This was the previous version using React-Hook-Form
+ * Loading the package made building the app run way too slowly,
+ * so I've just filled it in to satisfy the compiler.
+ * Code should not run in its current form.
+ */
+
+export default function SettingsHookForm() {
   const ref = useRef<HTMLDialogElement | null>(null);
 
   const { timerDurations } = timerState;
@@ -35,7 +62,6 @@ export default function Settings() {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
   } = useForm<FieldValues>({
     defaultValues: {
       fontType: fontType.value,
@@ -90,7 +116,7 @@ export default function Settings() {
           >
             <div class="px-8 sm:px-10 md:px-12 pt-8 flex flex-col gap-8">
               <div class="flex justify-between">
-                <h1 class="font-bold text-2xl">Settings</h1>
+                <h1 class="font-bold text-2xl">Settings (React Hook Form)</h1>
 
                 <Button
                   onClick={handleClose}
