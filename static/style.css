@@ -3,6 +3,8 @@
 
 /* Definitions */
 body {
+  user-select: none;
+
   /* initialize with red to avoid pre-load jank */
   --accent-color: #f87070;
 

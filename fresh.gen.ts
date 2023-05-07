@@ -4,28 +4,22 @@
 
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/_app.tsx";
-import * as $1 from "./routes/api/joke.ts";
-import * as $2 from "./routes/index.tsx";
+import * as $1 from "./routes/index.tsx";
 import * as $$0 from "./islands/Counter.tsx";
 import * as $$1 from "./islands/Settings.tsx";
-import * as $$2 from "./islands/SettingsHookForm.tsx";
-import * as $$3 from "./islands/SettingsSingleSignal.tsx";
-import * as $$4 from "./islands/Timer.tsx";
-import * as $$5 from "./islands/TimerSelect.tsx";
+import * as $$2 from "./islands/Timer.tsx";
+import * as $$3 from "./islands/TimerSelect.tsx";
 
 const manifest = {
   routes: {
     "./routes/_app.tsx": $0,
-    "./routes/api/joke.ts": $1,
-    "./routes/index.tsx": $2,
+    "./routes/index.tsx": $1,
   },
   islands: {
     "./islands/Counter.tsx": $$0,
     "./islands/Settings.tsx": $$1,
-    "./islands/SettingsHookForm.tsx": $$2,
-    "./islands/SettingsSingleSignal.tsx": $$3,
-    "./islands/Timer.tsx": $$4,
-    "./islands/TimerSelect.tsx": $$5,
+    "./islands/Timer.tsx": $$2,
+    "./islands/TimerSelect.tsx": $$3,
   },
   baseUrl: import.meta.url,
   config,

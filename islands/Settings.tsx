@@ -53,7 +53,7 @@ export default function Settings() {
   return (
     <>
       <button
-        class="w-12 h-12 flex items-center justify-center rounded-full"
+        class="w-12 h-12 mt-2 flex items-center justify-center rounded-full"
         onClick={() => ref.current?.showModal()}
         aria-label="Settings"
       >
