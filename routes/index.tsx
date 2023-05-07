@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
       <TimerSelect />
       <Timer />
-      <div class="flex gap-8">
+      <div class="flex gap-8 mt-4">
         <SettingsMultipleSignal />
       </div>
     </div>

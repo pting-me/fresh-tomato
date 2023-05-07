@@ -1,10 +1,5 @@
+import { clsx } from "https:/esm.sh/clsx@1.2.1";
 import { JSX } from "preact";
-
-// import { accentColorClass } from "../utils/themeState.ts";
-
-function classNames(...classes: (string | false)[]) {
-  return classes.filter(Boolean).join(" ");
-}
 
 interface Tab {
   label: string;
@@ -25,26 +20,24 @@ export default function TabBar(props: TabBarProps) {
   };
 
   return (
-    <div>
-      <div>
-        <nav className="flex space-x-4" aria-label="Tabs">
-          {tabs.map((t) => (
-            <button
-              key={t.value}
-              value={t.value}
-              onClick={handleClick}
-              disabled
-              className={classNames(
-                t.value === value &&
-                  `bg-accent text-on-accent`,
-                "rounded-full px-6 py-3 text-sm font-bold cursor-unset",
-              )}
-            >
-              {t.label}
-            </button>
-          ))}
-        </nav>
-      </div>
+    <div class="mb-8">
+      <nav className="flex space-x-4 rounded-full bg-surface-dim p-2" aria-label="Tabs">
+        {tabs.map((t) => (
+          <button
+            key={t.value}
+            value={t.value}
+            onClick={handleClick}
+            disabled
+            className={clsx(
+              t.value === value &&
+                `bg-accent text-on-accent`,
+              "rounded-full px-6 py-3 text-sm font-bold cursor-unset",
+            )}
+          >
+            {t.label}
+          </button>
+        ))}
+      </nav>
     </div>
   );
 }

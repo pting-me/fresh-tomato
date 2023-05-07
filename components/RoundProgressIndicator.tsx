@@ -36,15 +36,17 @@ export interface RoundProgressIndicatorProps
 
 export function RoundProgressIndicator(props: RoundProgressIndicatorProps) {
   const { diameter, progress, class: className, ...rest } = props;
-  console.log(generateProgressBarPath(progress, diameter));
+
   return (
-    <div
-      class={clsx("bg-accent", className)}
-      style={{
-        clipPath: `path("${generateProgressBarPath(progress, diameter)}")`,
-      }}
-      {...rest}
-    >
+    <div className={clsx("flex justify-center items-center", className)}>
+      <div
+        class={`bg-accent w-[${diameter}px] h-[${diameter}px]`}
+        style={{
+          clipPath: `path("${generateProgressBarPath(progress, diameter)}")`,
+        }}
+        {...rest}
+      >
+      </div>
     </div>
   );
 }

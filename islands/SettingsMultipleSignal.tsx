@@ -53,6 +53,7 @@ export default function SettingsMultipleSignal() {
   return (
     <>
       <button
+        class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-dim"
         onClick={() => ref.current?.showModal()}
         aria-label="Settings"
       >
@@ -70,6 +71,7 @@ export default function SettingsMultipleSignal() {
             <h1 class="font-bold text-2xl">Settings</h1>
 
             <Button
+              class="rounded-full hover:bg-inverse-surface w-8 h-8 flex items-center justify-center"
               onClick={handleClose}
             >
               <CloseIcon />
