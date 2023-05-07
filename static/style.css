@@ -1,38 +1,35 @@
 /* Import fonts */
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Roboto+Slab:wght@400;700&family=Space+Mono:wght@400;700&display=swap");
 
-/* Fonts */
-body[data-font-type="sans"] {
-  --font-family: "Kumbh Sans", --apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-}
-body[data-font-type="serif"] {
-  --font-family: "Roboto Slab", Palatino, "Palatino Linotype", "Palatino LT STD",
-    "Book Antiqua", Georgia, serif;
-}
-body[data-font-type="mono"] {
-  --font-family: "Space Mono", "SF Mono", SFMono-Regular, Consolas,
-    "Liberation Mono", Menlo, Courier, monospace;
-}
-
-/* Accent colors */
-body[data-theme="red"] {
-  --accent-color: #f87070;
-}
-body[data-theme="teal"] {
-  --accent-color: #70f3f8;
-}
-body[data-theme="purple"] {
-  --accent-color: #d881f8;
-}
-/* initialize with red to avoid pre-load jank */
-body {
-  --accent-color: #f87070;
-}
-
 /* Definitions */
 body {
+  /* initialize with red to avoid pre-load jank */
+  --accent-color: #f87070;
+
+  &[data-theme="red"] {
+    --accent-color: #f87070;
+  }
+  &[data-theme="teal"] {
+    --accent-color: #70f3f8;
+  }
+  &[data-theme="purple"] {
+    --accent-color: #d881f8;
+  }
+
+  &[data-font-type="sans"] {
+    --font-family: "Kumbh Sans", --apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+      "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  }
+  &[data-font-type="serif"] {
+    --font-family: "Roboto Slab", Palatino, "Palatino Linotype",
+      "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  }
+  &[data-font-type="mono"] {
+    --font-family: "Space Mono", "SF Mono", SFMono-Regular, Consolas,
+      "Liberation Mono", Menlo, Courier, monospace;
+  }
+
   font-family: var(
     --font-family,
     "Kumbh Sans",
@@ -49,14 +46,15 @@ body {
   );
 }
 
-button:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-}
-
-button:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
+button {
+  &:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+  }
 }
 
 .timer-container {
@@ -71,8 +69,7 @@ button:focus-visible {
 
 .on-surface-icon {
   fill: #d7e0ff88;
-}
-
-.on-surface-icon:hover {
-  fill: #d7e0ff;
+  &:hover {
+    fill: #d7e0ff;
+  }
 }

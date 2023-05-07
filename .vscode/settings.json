@@ -7,5 +7,9 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "tsImportSorter.configuration.configurationFileName": ".vscode/import-sorter.json"
+  "files.associations": { "./static/style.css": "postcss" },
+  "tsImportSorter.configuration.configurationFileName": ".vscode/import-sorter.json",
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
