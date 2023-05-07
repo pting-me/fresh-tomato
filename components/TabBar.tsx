@@ -21,7 +21,10 @@ export default function TabBar(props: TabBarProps) {
 
   return (
     <div class="mb-8">
-      <nav className="flex space-x-4 rounded-full bg-surface-dim p-2" aria-label="Tabs">
+      <nav
+        className="flex space-x-4 rounded-full bg-surface-dim p-2"
+        aria-label="Tabs"
+      >
         {tabs.map((t) => (
           <button
             key={t.value}
@@ -29,9 +32,10 @@ export default function TabBar(props: TabBarProps) {
             onClick={handleClick}
             disabled
             className={clsx(
-              t.value === value &&
-                `bg-accent text-on-accent`,
-              "rounded-full px-6 py-3 text-sm font-bold cursor-unset",
+              t.value === value
+                ? `bg-accent text-on-accent`
+                : "text-on-surface text-opacity-50 hover:text-opacity-100",
+              "rounded-full px-6 py-3 text-sm font-bold",
             )}
           >
             {t.label}

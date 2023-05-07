@@ -53,7 +53,7 @@ export default function SettingsMultipleSignal() {
   return (
     <>
       <button
-        class="w-12 h-12 flex items-center justify-center rounded-full hover:bg-surface-dim"
+        class="w-12 h-12 flex items-center justify-center rounded-full"
         onClick={() => ref.current?.showModal()}
         aria-label="Settings"
       >
@@ -82,7 +82,7 @@ export default function SettingsMultipleSignal() {
           >
             <div class="px-8 sm:px-10 md:px-12 pt-8 flex flex-col gap-8">
               <div>
-                <h2 class="uppercase font-bold tracking-[0.5rem]">
+                <h2 class="uppercase font-bold tracking-[0.375rem]">
                   Time (minutes)
                 </h2>
                 <div class="mt-4 flex flex-col gap-4 sm:flex-row sm:gap-8">
@@ -112,7 +112,7 @@ export default function SettingsMultipleSignal() {
               </div>
 
               <div class="flex flex-col items-center sm:flex-row justify-between gap-4">
-                <h2 class="uppercase font-bold tracking-[0.5rem]">Font</h2>
+                <h2 class="uppercase font-bold tracking-[0.375rem]">Font</h2>
                 <div class="flex gap-4">
                   {fontTypes.map((ft) => {
                     return (
@@ -147,7 +147,7 @@ export default function SettingsMultipleSignal() {
                 </div>
               </div>
               <div class="flex flex-col items-center sm:flex-row justify-between gap-4">
-                <h2 class="uppercase font-bold tracking-[0.5rem]">Color</h2>
+                <h2 class="uppercase font-bold tracking-[0.375rem]">Color</h2>
                 <div class="flex gap-4">
                   {Object.entries(themes).map(([key, val]) => {
                     return (

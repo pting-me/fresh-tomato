@@ -68,3 +68,11 @@ button:focus-visible {
   box-shadow: 36px 36px 64px 0px rgba(22, 25, 50, 1),
     -36px -36px 64px 0px rgba(38, 44, 86, 1);
 }
+
+.on-surface-icon {
+  fill: #d7e0ff88;
+}
+
+.on-surface-icon:hover {
+  fill: #d7e0ff;
+}
