@@ -19,7 +19,7 @@ export const defaultOptionQueue: TimerType[] = [
 ];
 
 const SECONDS_PER_MINUTE = 60;
-const ONE_SECOND = 1000;
+const ONE_SECOND = 1;
 
 const status = signal<TimerStatus>("idle");
 const currentTypeIndex = signal(0);

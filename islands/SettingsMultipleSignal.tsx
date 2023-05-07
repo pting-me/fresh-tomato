@@ -67,7 +67,7 @@ export default function SettingsMultipleSignal() {
           onClick={(e) => e.stopPropagation()}
         >
           <div class="px-8 sm:px-10 md:px-12 pt-8 flex justify-between">
-            <h1 class="font-bold text-2xl">Settings (Multiple Signal)</h1>
+            <h1 class="font-bold text-2xl">Settings</h1>
 
             <Button
               onClick={handleClose}
