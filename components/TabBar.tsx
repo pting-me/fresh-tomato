@@ -1,22 +1,24 @@
 import { clsx } from "https:/esm.sh/clsx@1.2.1";
 import { JSX } from "preact";
 
+import { TimerType } from "../utils/timerState.ts";
+
 interface Tab {
   label: string;
-  value: string;
+  value: TimerType;
 }
 
 interface TabBarProps {
   tabs: Tab[];
-  value: string;
-  onChange?: (value: string) => void;
+  value: TimerType;
+  onChange?: (value: TimerType) => void;
 }
 
 export default function TabBar(props: TabBarProps) {
   const { tabs, value, onChange = () => {} } = props;
 
   const handleClick = (e: JSX.TargetedMouseEvent<HTMLButtonElement>) => {
-    onChange(e.currentTarget.value);
+    onChange(e.currentTarget.value as TimerType);
   };
 
   return (
@@ -30,7 +32,6 @@ export default function TabBar(props: TabBarProps) {
             key={t.value}
             value={t.value}
             onClick={handleClick}
-            disabled
             className={clsx(
               t.value === value
                 ? `bg-accent text-on-accent`

@@ -19,7 +19,7 @@ export const defaultOptionQueue: TimerType[] = [
 ];
 
 const SECONDS_PER_MINUTE = 60;
-const ONE_SECOND = 1;
+const ONE_SECOND = 1000;
 
 const status = signal<TimerStatus>("idle");
 const currentTypeIndex = signal(0);
@@ -56,6 +56,28 @@ function toggle() {
       status.value = "running";
   }
 }
+
+/* actions */
+
+function skipToType(newType: TimerType) {
+  if (newType === type.value) {
+    return;
+  }
+
+  let nextIndex = defaultOptionQueue.indexOf(newType, currentTypeIndex.value);
+  if (nextIndex === -1) {
+    nextIndex = defaultOptionQueue.indexOf(newType);
+  }
+  currentTypeIndex.value = nextIndex;
+  currentTime.value = (timerDurations.value[type.value] ?? 0) *
+    SECONDS_PER_MINUTE;
+
+  if (status.value === "complete") {
+    status.value = "idle";
+  }
+}
+
+/* effects */
 
 function finish() {
   if (
@@ -99,6 +121,7 @@ effect(updateStartTime);
 export const timerState = {
   actionLabel,
   currentTime,
+  skipToType,
   startTime,
   status,
   timerDurations,

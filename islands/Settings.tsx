@@ -18,7 +18,7 @@ import {
 } from "../utils/themeState.ts";
 import { timerState, timerTypes } from "../utils/timerState.ts";
 
-export default function SettingsMultipleSignal() {
+export default function Settings() {
   const ref = useRef<HTMLDialogElement | null>(null);
   const formState = {
     pomodoro: useSignal(timerState.timerDurations.value.pomodoro),
