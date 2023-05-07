@@ -6,16 +6,20 @@ body {
   user-select: none;
 
   /* initialize with red to avoid pre-load jank */
-  --accent-color: #f87070;
+  --accent: #f87070;
+  --accent-hover: #f78c8e;
 
   &[data-theme="red"] {
-    --accent-color: #f87070;
+    --accent: #f87070;
+    --accent-hover: #f78c8e;
   }
   &[data-theme="teal"] {
-    --accent-color: #70f3f8;
+    --accent: #70f3f8;
+    --accent-hover: #8ff3f7;
   }
   &[data-theme="purple"] {
-    --accent-color: #d881f8;
+    --accent: #d881f8;
+    --accent-hover: #df9ef7;
   }
 
   &[data-font-type="sans"] {
@@ -48,13 +52,15 @@ body {
   );
 }
 
+a,
 button {
   &:focus {
     outline: 2px solid transparent;
     outline-offset: 2px;
   }
   &:focus-visible {
-    outline: 2px solid var(--accent-color);
+    outline: 2px auto Highlight;
+    outline: 2px auto -webkit-focus-ring-color;
     outline-offset: 2px;
   }
 }

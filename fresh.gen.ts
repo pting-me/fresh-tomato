@@ -5,10 +5,9 @@
 import config from "./deno.json" assert { type: "json" };
 import * as $0 from "./routes/_app.tsx";
 import * as $1 from "./routes/index.tsx";
-import * as $$0 from "./islands/Counter.tsx";
-import * as $$1 from "./islands/Settings.tsx";
-import * as $$2 from "./islands/Timer.tsx";
-import * as $$3 from "./islands/TimerSelect.tsx";
+import * as $$0 from "./islands/Settings.tsx";
+import * as $$1 from "./islands/Timer.tsx";
+import * as $$2 from "./islands/TimerSelect.tsx";
 
 const manifest = {
   routes: {
@@ -16,10 +15,9 @@ const manifest = {
     "./routes/index.tsx": $1,
   },
   islands: {
-    "./islands/Counter.tsx": $$0,
-    "./islands/Settings.tsx": $$1,
-    "./islands/Timer.tsx": $$2,
-    "./islands/TimerSelect.tsx": $$3,
+    "./islands/Settings.tsx": $$0,
+    "./islands/Timer.tsx": $$1,
+    "./islands/TimerSelect.tsx": $$2,
   },
   baseUrl: import.meta.url,
   config,

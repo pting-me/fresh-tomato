@@ -22,7 +22,7 @@ export default function TabBar(props: TabBarProps) {
   };
 
   return (
-    <div class="mb-2">
+    <div class="mb-2 z-10">
       <nav
         className="flex space-x-4 rounded-full bg-surface-dim p-2"
         aria-label="Tabs"

@@ -4,7 +4,6 @@ import { useRef } from "preact/hooks";
 
 import { useSignal } from "@preact/signals";
 
-import { Button } from "../components/Button.tsx";
 import { CheckIcon } from "../components/CheckIcon.tsx";
 import { CloseIcon } from "../components/CloseIcon.tsx";
 import { SettingsIcon } from "../components/SettingsIcon.tsx";
@@ -53,14 +52,14 @@ export default function Settings() {
   return (
     <>
       <button
-        class="w-12 h-12 mt-2 flex items-center justify-center rounded-full"
+        class="w-12 h-12 mt-2 flex items-center justify-center rounded-full z-10"
         onClick={() => ref.current?.showModal()}
         aria-label="Settings"
       >
         <SettingsIcon />
       </button>
       <dialog
-        class="bg-transparent w-[540px] max-w-[calc(100vw-2rem)]"
+        class="bg-transparent w-[540px] max-w-[calc(100vw-2rem)] pb-8"
         ref={ref}
       >
         <div
@@ -70,12 +69,12 @@ export default function Settings() {
           <div class="px-8 sm:px-10 md:px-12 pt-8 flex justify-between">
             <h1 class="font-bold text-2xl">Settings</h1>
 
-            <Button
+            <button
               class="rounded-full hover:bg-inverse-surface w-8 h-8 flex items-center justify-center"
               onClick={handleClose}
             >
               <CloseIcon />
-            </Button>
+            </button>
           </div>
           <form
             onSubmit={handleSubmit}
@@ -165,7 +164,7 @@ export default function Settings() {
                         />
                         <label
                           class={clsx(
-                            `cursor-pointer w-10 h-10 bg-[${val}] rounded-full flex items-center justify-center`,
+                            `cursor-pointer w-10 h-10 bg-${key} hover:bg-${key}-hover rounded-full flex items-center justify-center`,
                           )}
                           for={key}
                           onClick={() => {
@@ -180,9 +179,9 @@ export default function Settings() {
                 </div>
               </div>
             </div>
-            <div class="flex items-end justify-center mt-4">
+            <div class="flex items-end justify-center">
               <input
-                class="bg-accent text-on-accent rounded-full px-6 py-4 min-w-[8.75rem] text-sm font-bold cursor-pointer relative top-4"
+                class="bg-accent hover:bg-accent-hover text-on-accent rounded-full px-6 py-4 mb-2 min-w-[8.75rem] text-sm font-bold cursor-pointer relative top-8"
                 type="submit"
                 value="Apply"
               />

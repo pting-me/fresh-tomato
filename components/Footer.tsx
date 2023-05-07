@@ -2,7 +2,7 @@ export function Footer() {
   return (
     <div class="flex flex-col items-center gap-4 sm:flex-row sm:items-end sm:justify-between w-full mx-4 max-w-screen-md">
       <a href="https://fresh.deno.dev" class="relative">
-        <div class="absolute w-full h-full rounded hover:bg-white opacity-20">
+        <div class="absolute w-full h-full rounded hover:bg-white opacity-5">
         </div>
         <img
           width="197"
@@ -17,7 +17,7 @@ export function Footer() {
             Made by{" "}
           </span>
           <a
-            class="opacity-50 hover:opacity-100"
+            class="underline opacity-50 hover:opacity-100"
             href="https://github.com/pting-me"
           >
             @pting-me
@@ -28,7 +28,7 @@ export function Footer() {
             Design by{" "}
           </span>
           <a
-            class="opacity-50 hover:opacity-100"
+            class="underline opacity-50 hover:opacity-100"
             href="https://frontendmentor.io"
           >
             Frontend Mentor

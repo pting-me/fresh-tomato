@@ -6,6 +6,12 @@ export const accentColors = {
   purple: "#D881F8",
 } as const;
 
+export const accentVariantColors = {
+  redHover: "#f78c8e",
+  tealHover: "#8ff3f7",
+  purpleHover: "#df9ef7",
+} as const;
+
 export const neutralColors = {
   // accent is calculated in twind.config
   onAccent: "#161932",
@@ -19,7 +25,11 @@ export const neutralColors = {
   inverseOnSurfaceVariant: "#16193266",
 } as const;
 
-export const colors = { ...accentColors, ...neutralColors };
+export const colors = {
+  ...accentColors,
+  ...accentVariantColors,
+  ...neutralColors,
+};
 
 // Adds bracket for twind classes
 export const colorClass = Object.fromEntries(

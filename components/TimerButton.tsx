@@ -1,6 +1,8 @@
 import { IS_BROWSER } from "$fresh/runtime.ts";
+import { clsx } from "clsx";
 import { JSX } from "preact";
 
+import { fontType } from "../utils/themeState.ts";
 import { formatTime } from "../utils/time.ts";
 import { RoundProgressIndicator } from "./RoundProgressIndicator.tsx";
 
@@ -34,7 +36,12 @@ export function TimerButton(props: TimerButtonProps) {
         />
         <div class="absolute w-[272px] h-[272px] sm:hidden rounded-full bg-surface-dim group-hover:bg-surface" />
         <div class="mt-10 z-10">
-          <p class="font-bold text-7xl sm:text-8xl">
+          <p
+            class={clsx(
+              "font-bold text-7xl sm:text-8xl",
+              fontType.value === "mono" && "tracking-[-0.25rem]",
+            )}
+          >
             {formatTime(currentTime)}
           </p>
         </div>

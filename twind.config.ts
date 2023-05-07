@@ -13,7 +13,8 @@ const options: Options = {
     },
     extend: {
       colors: {
-        accent: "var(--accent-color)",
+        accent: "var(--accent)",
+        'accent-hover': "var(--accent-hover)",
         ...camelToKebab(colors),
       },
     },
