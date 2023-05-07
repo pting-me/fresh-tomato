@@ -127,7 +127,7 @@ export default function Settings() {
                         />
                         <label
                           class={clsx(
-                            `cursor-pointer w-10 h-10 font-${ft} rounded-full flex items-center justify-center`,
+                            `cursor-pointer w-10 h-10 font-${ft} rounded-full flex items-center justify-center hover:opacity-80`,
                             ft === formState.fontType.value
                               ? "bg-surface text-on-surface"
                               : "bg-inverse-surface text-inverse-on-surface",
